@@ -21,6 +21,13 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
   margin: 0;
+
+  p{
+    text-align: center;
+    padding-block: 40px;
+    font-family: "roboto";
+    color: #bad9ce;
+  }
 }
 
 .intro{
@@ -70,4 +77,43 @@ body {
     padding-block: 40px;
     font-family: "roboto";
     color: #bad9ce;
+}
+
+.login{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login h1{
+    font-family: "Sour gummy";
+    color: var(--amarelo);
+    font-size: 3.5rem;
+}
+
+.login p{
+    text-align: left;
+}
+
+.login input{
+    padding: 10px 30px;
+    margin-top: -30px;
+    border-radius: 10px;
+    border: 1px solid var(--amarelo);
+}
+
+.login button{
+    width: 150px;
+    margin-block: 30px;
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    font-family: "Sour Gummy";
+    font-size: 15px;
+    background-image: linear-gradient(#f2bb16,#bf820f);
 }
