@@ -1,1 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root{
+    --azulescuro: #0e6973;
+    --azulagua: #118c8c;
+    --azulclaro: #bad9ce;
+    --amarelo: #f2bb16;
+    --ouro: #bf820f;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(#11808c);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.intro{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro img{
+    height: 300px;
+    width: 300px;
+}
+
+.intro button{
+    width: 300px;
+    margin-block: 15px;
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    font-family: "Sour Gummy";
+    font-size: 15px;
+}
+
+.intro button:hover{
+    transform: scale(1.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 10px rgb(0, 0, 0, 0.2);
+}
+
+.intro .enter{
+    background-image: linear-gradient(#f2bb16,#bf820f);
+    color: black;
+}
+
+.intro .create{
+    background-color: #bad9ce;
+    color: #0e6973;
+}
+
+.intro p{
+    text-align: center;
+    padding-block: 40px;
+    font-family: "roboto";
+    color: #bad9ce;
+}
