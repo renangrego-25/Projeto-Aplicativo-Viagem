@@ -44,7 +44,7 @@ body {
     width: 300px;
 }
 
-.intro button{
+.intro a{
     width: 300px;
     margin-block: 15px;
     padding: 20px;
@@ -54,9 +54,10 @@ body {
     cursor: pointer;
     font-family: "Sour Gummy";
     font-size: 15px;
+    text-decoration: none;
 }
 
-.intro button:hover{
+.intro a:hover{
     transform: scale(1.1);
     border-radius: 20px;
     box-shadow: 0 10px 10px rgb(0, 0, 0, 0.2);
@@ -106,9 +107,10 @@ body {
 }
 
 .login button{
-    width: 150px;
-    margin-block: 30px;
-    padding: 20px;
+    width: 230px;
+    margin-top: 20px;
+    margin-block: 10px;
+    padding: 15px;
     border: none;
     border-radius: 15px;
     transition: 0.5s ease-in-out;
@@ -116,4 +118,9 @@ body {
     font-family: "Sour Gummy";
     font-size: 15px;
     background-image: linear-gradient(#f2bb16,#bf820f);
+}
+.login button:hover{
+    transform: scale(1.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 10px rgb(0, 0, 0, 0.2);
 }
