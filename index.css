@@ -18,8 +18,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: linear-gradient(#11808c);
+  background-image: url(images/background.png);
   background-repeat: no-repeat;
+  background-position: center;
   min-height: 100vh;
   margin: 0;
 
@@ -31,11 +32,18 @@ body {
   }
 }
 
+a{
+    text-align: center;
+    padding-block: 30px;
+    font-family: "Sour gummy";
+    color: var(--azulescuro);
+    text-decoration: none;
+}
+
 .intro{
     text-align: center;
     justify-content: center;
     align-items: center;
-    max-width: 400px;
     display: flex;
     flex-direction: column;
 }
@@ -127,8 +135,10 @@ body {
 }
 
 .header{
+    margin-left: 0;
+    margin-right: 0;
     background-color: var(--amarelo);
-    width: 100vw;
+    width: 480px;
     height: 160px;
     border-radius: 0px 0px 15px 15px;
     box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.2);  
@@ -178,5 +188,6 @@ body {
     height: 100px;
     background-color: #ffffff;
     border: 2px solid var(--amarelo);
+    box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.3);
     border-radius: 15px;
 }
