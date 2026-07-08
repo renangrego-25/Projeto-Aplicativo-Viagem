@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha viagem</title>
+    <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+    <section class="cards">
+        <div class="card-container">
+            <div class="card-header" onclick="toggleAccordion()">
+                <h2>MINHAS PASSAGENS</h2>
+                <span class="arrow" id="arrow-icon">▼</span>
+            </div>
+
+            <div class="card-content" id="card-content">
+                <div class="upload-area">
+                 <label for="file-upload" class="custom-file-upload">
+                     Escolher Arquivos
+                    </label>
+                     <input type="file" id="file-upload" multiple />
+                     <p id="file-name">Nenhum arquivo selecionado</p>
+                    </div>
+    
+                    <button class="btn-save" onclick="saveFiles()">Salvar Passagens</button>
+                </div>
+            </div>
+        <a class="card" >
+            <h1>HOSPEDAGEM</h1>
+            <p></p>
+        </a>
+        <a class="card">
+            <h1>INGRESSOS/TICKETS</h1>
+            <p></p>
+        </a>
+        <a class="card">
+            <h1>PASSAPORTE DIGITAL</h1>
+            <p></p>
+        </a>
+    </section>
+    
+</body>
+</html>

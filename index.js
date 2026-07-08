@@ -38,3 +38,13 @@ document.getElementById('btnEntrar').addEventListener('click', function(e){
         erro.style.display = 'block';
     }
 });
+
+function toggleAccordion() {
+    const content = document.getElementById('card-content');
+    const arrow = document.getElementById('arrow-icon');
+
+    content.classList.toggle('open');
+    arrow.classList.toggle('rotate');
+
+    
+}
