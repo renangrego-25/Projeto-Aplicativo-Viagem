@@ -46,5 +46,27 @@ function toggleAccordion() {
     content.classList.toggle('open');
     arrow.classList.toggle('rotate');
 
-    
+}
+
+document.getelementById('fileupload').addEventListener('change', function(){
+    const fileNameDisplay = document.getElementById('file-name');
+    if (this.files && this.files.length > 0) {
+        fileNameDisplay.textContent = this.files.length === 1 
+      ? this.files[0].name 
+      : `${this.files.length} arquivos selecionados`;
+  } else {
+    fileNameDisplay.textContent = "Nenhum arquivo selecionado";
+  }
+});
+
+function saveFiles() {
+  const fileInput = document.getElementById('file-upload');
+  if (fileInput.files.length === 0) {
+    alert('Por favor, selecione pelo menos um arquivo antes de salvar.');
+    return;
+  }
+  
+  // Aqui entraria o seu fetch ou upload para o servidor
+  alert('Arquivos prontos para serem salvos!');
+  console.log(fileInput.files);
 }
