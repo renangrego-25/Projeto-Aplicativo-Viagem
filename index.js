@@ -48,6 +48,14 @@ function toggleAccordion() {
 
 }
 
+function toggleAccordion2() {
+    const content2 = document.getElementById('card-content2');
+    const arrow2 = document.getElementById('arrow-icon2');
+
+    content2.classList.toggle('open');
+    arrow2.classList.toggle('rotate');
+}
+
 document.getelementById('fileupload').addEventListener('change', function(){
     const fileNameDisplay = document.getElementById('file-name');
     if (this.files && this.files.length > 0) {

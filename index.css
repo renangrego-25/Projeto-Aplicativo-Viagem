@@ -231,7 +231,7 @@ a{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  user-select: none;
+  user-select:auto;
 }
 
 .card-header h2 {
@@ -248,7 +248,7 @@ a{
 
 
 .card-content {
-  max-height: 0;
+  max-height: 0px;
   overflow: hidden;
   transition: max-height 0.3s ease-out, padding 0.3s ease;
   padding: 0 20px;
