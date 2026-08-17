@@ -39,42 +39,12 @@ document.getElementById('btnEntrar').addEventListener('click', function(e){
     }
 });
 
-function toggleAccordion() {
-    const content = document.getElementById('card-content');
-    const arrow = document.getElementById('arrow-icon');
+window.addEventListener('DOMContentLoaded', () => {
+    const nome = localStorage.getItem('nomeUsuario');
 
-    content.classList.toggle('open');
-    arrow.classList.toggle('rotate');
-
-}
-
-function toggleAccordion2() {
-    const content2 = document.getElementById('card-content2');
-    const arrow2 = document.getElementById('arrow-icon2');
-
-    content2.classList.toggle('open');
-    arrow2.classList.toggle('rotate');
-}
-
-document.getelementById('fileupload').addEventListener('change', function(){
-    const fileNameDisplay = document.getElementById('file-name');
-    if (this.files && this.files.length > 0) {
-        fileNameDisplay.textContent = this.files.length === 1 
-      ? this.files[0].name 
-      : `${this.files.length} arquivos selecionados`;
-  } else {
-    fileNameDisplay.textContent = "Nenhum arquivo selecionado";
-  }
+    if (nome){
+        document.getElementById('saudacao').textContent = `Olá, ${nome}`;
+    } else {
+        window.location.href = 'login.html';
+    }
 });
-
-function saveFiles() {
-  const fileInput = document.getElementById('file-upload');
-  if (fileInput.files.length === 0) {
-    alert('Por favor, selecione pelo menos um arquivo antes de salvar.');
-    return;
-  }
-  
-  // Aqui entraria o seu fetch ou upload para o servidor
-  alert('Arquivos prontos para serem salvos!');
-  console.log(fileInput.files);
-}

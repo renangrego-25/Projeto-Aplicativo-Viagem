@@ -20,7 +20,7 @@ body {
   justify-content: center;
   text-align: center;
   align-items: center;
-  background-image: url(images/background.png);
+  background-image: linear-gradient(45deg,#000b6d, #118c8c);
   background-repeat: no-repeat;
   background-position: center;
   min-height: 100vh;
@@ -61,17 +61,16 @@ a{
     margin-block: 15px;
     padding: 20px;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     transition: 0.5s ease-in-out;
     cursor: pointer;
     font-family: "Sour Gummy";
-    font-size: 15px;
+    font-size: 18px;
     text-decoration: none;
 }
 
 .intro a:hover{
-    transform: scale(1.1);
-    border-radius: 20px;
+    transform: scale(1.05);
     box-shadow: 0 10px 10px rgb(0, 0, 0, 0.2);
 }
 
@@ -124,7 +123,7 @@ a{
     margin-block: 10px;
     padding: 15px;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     transition: 0.5s ease-in-out;
     cursor: pointer;
     font-family: "Sour Gummy";
@@ -132,180 +131,42 @@ a{
     background-image: linear-gradient(#f2bb16,#bf820f);
 }
 .login button:hover{
-    transform: scale(1.1);
-    border-radius: 20px;
+    transform: scale(1.05);
     box-shadow: 0 10px 10px rgb(0, 0, 0, 0.2);
 }
 
-.header{
-    margin-left: 0;
-    margin-right: 0;
-    background-color: var(--amarelo);
-    width: 400px;
-    height: 160px;
-    border-radius: 0px 0px 15px 15px;
-    box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.2);  
-    color: #0e6973;
-    font-family: "sour gummy";
-    font-size: 1.5rem;
+/*dashboard*/
+
+.allitens{
+    width: 490px;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, #f2bb1669, #000b6d ), url(images/beautiful-natural-landscape.jpg);
 }
 
-.header .hellouser{
-    display: flex;
-    flex-direction: column;
-    margin-inline: 15px;
-    gap: 0px;
+.allitens .container{
+    margin: 40px;
+
+    h1{
+        font-family: "sour gummy";
+        color: white;
+    }
 }
 
-.header .hellouser .btnup{
-    display:flex;
+.allitens .container .contname{
+    text-align: center;
+    align-items: center;
     justify-content: space-between;
-    text-align: center;
-    align-items: center;
-}
-
-.header .hellouser .btnup .account{
-   display: flex;
-   align-items: center;
-
-   p{
-    color: #0e6973;
-    font-size: 12px;
-    padding-inline: 20px;
-    cursor: pointer;
-   }
-}
-
-.cards{
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.cards .card{
-    width: 320px;
-    height: 100px;
-    background-color: #ffffff;
-    border: 2px solid var(--amarelo);
-    box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.3);
-    border-radius: 15px;
-    align-items: center;
-    text-align: left;
+    background-image: linear-gradient(18deg,rgba(255, 255, 255, 0.397),rgba(128, 128, 128, 0.473));
     padding: 10px;
-}
-
-.cards .card h1{
-    font-family: "sour gummy";
-    color: var(--azulagua);
-    font-size: 1.5rem;
-    max-width: 200px;
-}
-
-.cards .card p{
-    text-align: left;
-    margin-top: -20px;
-    color: var(--azulescuro);
-    max-width: 200px;
-}
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
 
 
-.card-container {
-  width: 100%;
-  max-width: 500px;
-  background: #ffffff;
-  border: 2px solid #f0b90b; 
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Sour gummy', sans-serif;
-}
-
-
-.card-header {
-  padding: 20px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  user-select:auto;
-}
-
-.card-header h2 {
-  margin: 0;
-  color: #008b9b; 
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.arrow {
-  color: #008b9b;
-  transition: transform 0.3s ease;
-}
-
-
-.card-content {
-  max-height: 0px;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out, padding 0.3s ease;
-  padding: 0 20px;
-  background-color: #fafafa;
-}
-
-
-.card-content.open {
-  max-height: 250px;
-  padding: 20px;
-  border-top: 1px solid #eeeeee;
-}
-
-
-.arrow.rotate {
-  transform: rotate(180deg);
-}
-
-
-.upload-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-input[type="file"] {
-  display: none;
-}
-
-.custom-file-upload {
-  border: 1px dashed #008b9b;
-  color: #008b9b;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.2s;
-}
-
-.custom-file-upload:hover {
-  background: rgba(0, 139, 155, 0.1);
-}
-
-.btn-save {
-  width: 100%;
-  background-color: #008b9b;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.btn-save:hover {
-  background-color: #006c79;
+    a{
+        padding-inline: 5px;
+    }
 }
