@@ -14,6 +14,10 @@
     padding: 0px;
 }
 
+h1{
+    font-family: "sour gummy";
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -138,8 +142,9 @@ a{
 /*dashboard*/
 
 .allitens{
-    width: 490px;
-    height: 100vh;
+    overflow: hidden;
+    width: 450px;
+    height: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -152,6 +157,7 @@ a{
     h1{
         font-family: "sour gummy";
         color: white;
+        text-transform: uppercase;
     }
 }
 
@@ -169,4 +175,93 @@ a{
     a{
         padding-inline: 5px;
     }
+}
+
+.mytravel{
+    text-align: center;
+    margin-top: 30px;
+}
+.mytravel .card1{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 195px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to left, #f2bb16,#bf820f);
+}
+
+.mytravel .card1 img{
+    height: 260px;
+    mask-image: linear-gradient(to left,
+    rgba(0,0,0,1) 50%,
+    rgba(0,0,0,0) 100%);
+}
+
+.mytravel .card1 .text{
+    text-align: left;
+    padding: 20px;
+
+    p{
+        text-align: left;
+    }
+} 
+
+.classcard{
+    display: flex;
+    flex-direction: column;
+}
+
+.classcard .carousel{
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    width: 910px;
+    gap: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.classcard .carousel .card{
+    width: 500px;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0px;
+    display: flex;
+    border-radius: 15px;
+    background-image: linear-gradient(to right, #118c8c, #000b6d);
+
+    h1{
+        padding-inline: 10px;
+        font-size: 1.5rem;
+    }
+}
+
+.btncarousel button{
+
+    background-color: transparent;
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+.mytravelopen {
+display: none;
+}
+
+.mytravelopen.hidden {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.418)), url(images/ac136ebda04e8a76b11f02e683dc8e1b.jpg);
+    height: 100vh;
 }

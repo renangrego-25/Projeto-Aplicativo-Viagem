@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Área do viajente</title>
     <link rel="stylesheet" href="../index.css">
 </head>
@@ -17,12 +17,49 @@
                 </div>
             </div>
 
-            <div card="mytravel">
+            <div class="mytravel" >
+                <a class="card1" href="" id="mytravel" onclick="mytravel">
+                    <div class="text">
+                        <h1>minha viagem</h1>
+                        <p>Controle total da sua viagem -></p>
+                    </div>
+
+                    <div class="img">
+                        <img src="/images/360_F_2016648503_YS9PkWx8wrRwWv8211SCTWz2TjptJ8on.jpg" alt="">
+                    </div>
+                </a>
+
+                <a class="classcard" href="">
+                    <div class="carousel" id="carousel">
+                        <div class="card">
+                            <h1>MINHAS PASSAGENS</h1>
+                            <img width="48" height="48" src="https://img.icons8.com/color/48/passport.png" alt="passport"/>
+                        </div>
+                        <div class="card">
+                            <h1>MINHAS RESERVAS</h1>
+                            <img width="48" height="48" src="https://img.icons8.com/pulsar-gradient/48/hotel-star.png" alt="hotel-star"/>
+                        </div>
+                        <div class="card">
+                            <h1>MEUS PASSEIOS</h1>
+                            <img width="48" height="48" src="https://img.icons8.com/3d-fluency/94/adventure.png" alt="adventure"/>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="btncarousel"> 
+                    <button id="prev"><img width="50" height="50" src="https://img.icons8.com/ios-filled/f2bb16/circled-chevron-left.png" alt="circled-chevron-left"/></button>
+                    <button id="next"><img width="50" height="50" src="https://img.icons8.com/ios-filled/f2bb16/circled-chevron-right.png" alt="circled-chevron-right"/></button>
+                </div>
 
             </div>
         </div>
     </section>
 
+    <section>
+        <div class="mytravelopen" id="mytravelopen">
+            <h1>MINHA VIAGEM</h1>
+        </div>
+    </section>
 
     <script src="/dash.js"></script>
 </body>
