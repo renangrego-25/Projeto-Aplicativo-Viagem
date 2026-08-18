@@ -144,7 +144,7 @@ a{
 .allitens{
     overflow: hidden;
     width: 450px;
-    height: 100%;
+    height: 100vh;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -258,10 +258,10 @@ a{
 
 
 .mytravelopen {
-display: none;
+display: none; 
 }
 
-.mytravelopen.hidden {
+.mytravelopen {
     background-image: linear-gradient(rgba(255, 255, 255, 0.418)), url(images/ac136ebda04e8a76b11f02e683dc8e1b.jpg);
     height: 100vh;
 }
