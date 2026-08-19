@@ -332,8 +332,8 @@ display: none;
 }
 
 .navfixed{
-    margin-bottom: -25px;
     z-index: 999;
+    bottom: 0;
     width: 480px;
     height: 70px;
     position: fixed;
