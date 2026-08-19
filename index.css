@@ -143,8 +143,8 @@ a{
 
 .allitens{
     overflow: hidden;
-    width: 450px;
-    height: 100vh;
+    width: 480px;
+    height: auto;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -211,6 +211,7 @@ a{
 } 
 
 .classcard{
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -225,6 +226,7 @@ a{
 }
 
 .classcard .carousel .card{
+    cursor: pointer;
     width: 500px;
     position: relative;
     text-align: center;
@@ -242,10 +244,73 @@ a{
 }
 
 .btncarousel button{
-
+    margin-top: 20px;
     background-color: transparent;
     border: none;
 }
+
+.IA {
+    text-align: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.295);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.IA div h1{
+    font-size: 1.5rem;
+}
+
+.IA div p{
+    font-size: 15px;
+    margin-top: -15px;
+}
+
+.itens{
+    margin-bottom: 80px;
+}
+
+.checklist{
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-top: 30px;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to right, #118c8c, #7c84c9);
+}
+
+.line{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+.line .card{
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 400px;
+    height: 90px;
+    font-size: 0.5rem;
+    margin-top: 30px;
+    border-radius: 15px;
+    padding-top: 20px;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to right, #118c8c, #7c84c9);
+}
+
+
 
 
 
@@ -264,4 +329,31 @@ display: none;
 .mytravelopen {
     background-image: linear-gradient(rgba(255, 255, 255, 0.418)), url(images/ac136ebda04e8a76b11f02e683dc8e1b.jpg);
     height: 100vh;
+}
+
+.navfixed{
+    margin-bottom: -25px;
+    z-index: 999;
+    width: 480px;
+    height: 70px;
+    position: fixed;
+    background-image: linear-gradient(white,rgb(210, 210, 240));
+    border-radius: 40px 40px 0px 0px;
+    box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navfixed div{
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.navfixed div a{
+    padding-inline: 50px;
+}
+
+.navfixed div a:hover{
+    transform: scale(1.05);
 }
