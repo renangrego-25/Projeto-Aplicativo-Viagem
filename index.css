@@ -14,6 +14,8 @@
     padding: 0px;
 }
 
+
+
 h1{
     font-family: "sour gummy";
 }
@@ -149,6 +151,10 @@ a{
     background-size: cover;
     background-repeat: no-repeat;
     background-image: linear-gradient(to bottom, #f2bb1669, #000b6d ), url(images/beautiful-natural-landscape.jpg);
+}
+
+.allitens.hidden{
+    display: none;
 }
 
 .allitens .container{
@@ -310,26 +316,101 @@ a{
     background-image: linear-gradient(to right, #118c8c, #7c84c9);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-.mytravelopen {
-display: none; 
+.pagshidden {
+    overflow: hidden;
+    width: 480px;
+    height: auto;
 }
 
-.mytravelopen {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.418)), url(images/ac136ebda04e8a76b11f02e683dc8e1b.jpg);
+
+
+
+.mytravelopen{
+    display: none;
+    text-align: center;
+    justify-content: center;
+}
+
+.mytravelopen.active {
+    text-align: center;
+    justify-content: center;
+    display: block; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.418), rgba(68, 68, 209, 0.781)), url(images/ac136ebda04e8a76b11f02e683dc8e1b.jpg);
     height: 100vh;
+    padding-top: 20px;
 }
+
+.mytravelopen.hidden {
+    display: none;
+}
+
+.mytravelopen .title{
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    margin: 30px;
+}
+
+.mytravelopen .title h1{
+    color: #0e6973;
+}
+
+.mytravelopen .content{
+    text-align: center;
+}
+.mytravelopen .content .cards{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 15px;
+   margin-block: 15px;
+   background-image: linear-gradient(to left, #f2bb16,#bf820f);
+   border-radius: 15px;
+   margin-inline: 30px;
+   height: 100px;
+   color: white;
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+   cursor: pointer;
+}
+
+.mytravelopen .next{
+    height: 160px;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    margin-inline: 30px;
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    background-image: linear-gradient(to right, #118c8c, #7c84c9); ;
+}
+
+.mytravelopen .date{
+    display: flex;
+    align-items: center;
+
+    a{
+        cursor: pointer;
+    }
+}
+
+#add{
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+
+
+
+
+
+
 
 .navfixed{
     z-index: 999;

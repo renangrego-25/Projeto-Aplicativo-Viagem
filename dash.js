@@ -31,5 +31,27 @@ prev.addEventListener('click', () => {
   updateCarousel();
 });
 
+//Página de Minha Viagem
 
+const allItens = document.getElementById('allitens');
+const myTravelOpen = document.getElementById('mytravelopen');
+const myTravel = document.getElementById('mytravel');
+
+myTravel.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    allItens.classList.add('hidden');
+    myTravelOpen.classList.add('active');
+    myTravelOpen.classList.remove('hidden');
+})
+
+const voltar = document.getElementById ('voltar');
+
+voltar.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    allItens.classList.remove('hidden');
+    myTravelOpen.classList.add('hidden');
+    myTravelOpen.classList.remove('active');
+})
 
