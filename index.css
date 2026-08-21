@@ -142,6 +142,58 @@ a{
 }
 
 /*dashboard*/
+.logout{
+    position: fixed;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #7c84c979;
+    width: 480px;
+    height: 100vh;
+    top: 0;
+    backdrop-filter: blur(5px);
+    transition: 0.2s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.logout.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.logout .cardout{
+    margin-top: 200px;
+    margin-inline: 20px;
+    width: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 10px 20px rgb(0, 0, 0, 0.5);
+    background-image: linear-gradient(to left, #000b6d, #118c8c);
+}
+
+.logout .cardout button{
+    border: none;
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-family: 'sour gummy';
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: 0.1s ease-in-out;
+}
+
+.logout .cardout button:active{
+    transform: scale(0.9);
+}
+
+.logout .cardout .btnexit{
+    background-color: rgb(61, 146, 80);
+    color: white;
+}
 
 .allitens{
     overflow: hidden;
@@ -187,7 +239,12 @@ a{
     text-align: center;
     margin-top: 30px;
 }
+
+.mytravel .card1:active{
+    transform: scale(0.9);
+}
 .mytravel .card1{
+    transition: 0.1s ease-in-out;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -329,6 +386,7 @@ a{
     display: none;
     text-align: center;
     justify-content: center;
+    height: auto;
 }
 
 .mytravelopen.active {
@@ -338,7 +396,7 @@ a{
     background-repeat: no-repeat;
     background-size: cover;
     background-image: linear-gradient(rgba(255, 255, 255, 0.418), rgba(68, 68, 209, 0.781)), url(images/ac136ebda04e8a76b11f02e683dc8e1b.jpg);
-    height: 100vh;
+    height: auto;
     padding-top: 20px;
 }
 
@@ -374,6 +432,11 @@ a{
    color: white;
    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
    cursor: pointer;
+   transition: 0.1s ease-in-out;
+}
+
+.mytravelopen .content .cards:active{
+    transform: scale(0.9);
 }
 
 .mytravelopen .next{
@@ -406,6 +469,48 @@ a{
 }
 
 
+.money{
+    position: relative;
+    background-color: #118c8c98;
+    margin-inline: 30px;
+    border-radius: 20px;
+    margin-bottom: 60px;
+    padding: 20px;
+    color: white;
+}
+
+.money h2{
+    text-transform: uppercase;
+    font-family: 'sour gummy';
+    color: white;
+    padding-bottom: 10px;
+}
+
+.money h3{
+    text-transform: uppercase;
+    font-family: 'sour gummy';
+    color: white;
+}
+
+.money .valuecomplete{
+    padding-bottom: 20px;
+}
+
+.money .valuecomplete button{
+    transition: 0.1s ease-in-out;
+    padding: 10px 30px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-family: 'sour gummy';
+    font-size: 18px;
+    border: none;
+    color: #0e6973;
+    background-image:  linear-gradient(to left, #f2bb16,#bf820f);;
+}
+
+.money .valuecomplete button:active{
+    transform: scale(0.9);
+}
 
 
 

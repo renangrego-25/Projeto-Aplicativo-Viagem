@@ -8,6 +8,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// carrosel dashboard
+
 const inner = document.getElementById('carousel');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
@@ -31,7 +33,7 @@ prev.addEventListener('click', () => {
   updateCarousel();
 });
 
-//Página de Minha Viagem
+//Página de Minha Viagem - acesso
 
 const allItens = document.getElementById('allitens');
 const myTravelOpen = document.getElementById('mytravelopen');
@@ -55,3 +57,30 @@ voltar.addEventListener('click', (e) => {
     myTravelOpen.classList.remove('active');
 })
 
+// Botão de sair
+
+const exit = document.getElementById('exit');
+const logout = document.getElementById('logout');
+
+exit.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    logout.classList.add('active');
+    
+})
+
+const cancel = document.getElementById('cancel');
+
+cancel.addEventListener('click', (e) => {
+    e.preventDefault
+
+    logout.classList.remove('active');
+})
+
+const exitSure = document.getElementById('yesSure');
+
+exitSure.addEventListener('click', (e) => {
+    e.preventDefault;
+
+    window.location.href = '../index.html'
+})
