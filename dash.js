@@ -84,3 +84,43 @@ exitSure.addEventListener('click', (e) => {
 
     window.location.href = '../index.html'
 })
+
+//Card para adicionar data de viagem
+
+const addTravel = document.getElementById('add');
+const cardTravel = document.getElementById('cardTravel');
+const closeCard = document.getElementById('closecard');
+
+addTravel.addEventListener('click', (e) =>{
+    e.preventDefault;
+
+    cardTravel.classList.add('active');
+})
+
+closeCard.addEventListener('click', (e) => {
+    e.preventDefault;
+
+    cardTravel.classList.remove('active');
+})
+
+
+document.getElementById('savedate').addEventListener('click', function() {
+    const dateTravel = document.getElementById('data').value;
+    const hourTravel = document.getElementById('hora').value;
+    const locationTravel = document.getElementById('Local').value;
+    const erroSave = document.getElementById('errosave');
+    const next = document.getElementById('next');
+    
+    localStorage.setItem('dataViagem', dateTravel);
+    localStorage.setItem('horaViagem', hourTravel);
+    localStorage.setItem('localViagem', locationTravel);
+
+    if(locationTravel === '' || dateTravel === '' || hourTravel === ''){
+        erroSave.style.display = 'block';
+    } else {
+        cardTravel.classList.remove('active');
+        erroSave.style.display = 'none';
+        addTravel.classList.add('');
+    }
+    console.log('Dados salvos!' , { dateTravel, hourTravel, locationTravel });
+});

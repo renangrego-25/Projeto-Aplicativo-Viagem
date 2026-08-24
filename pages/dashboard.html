@@ -118,25 +118,45 @@
                 <div class="voltar" id="voltar"><img width="30" height="30" src="https://img.icons8.com/ios-filled/0e6973/back.png" alt="back"/></div>
                 <div><h1>MINHA VIAGEM</h1></div>
             </div>
-            <div class="next">
+            <div class="next" id="next">
                 <div class="days">
                     <h1>Próxima viagem</h1>
                     <img width="96" height="96" src="https://img.icons8.com/color/96/calendar--v1.png" alt="calendar--v1"/>
                 </div>
                 <div class="date">
                     <div>
-                        <h1>Dia 19</h1>
-                        <p>às 19:00</p>
+                        <h1 class="date">Dia 19</h1>
+                        <p class="hour">às 19:00</p>
+                        <p class="location">para</p>
                         <a>
                             <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/ffffff/pencil--v1.png" alt="pencil--v1"/>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="next" id="add">
+            <div class="nextvoid" id="add">
                 <p>Você não tem nenhuma viagem marcada.</p>
-                <p id="add">Clique para adicionar</p>
+                <p>Clique para adicionar</p>
             </div>
+
+            <div class="datetraveledit" id="cardTravel">
+                <div class="exit">
+                    <a id="closecard"><img width="50" height="50" src="https://img.icons8.com/ios-filled/0e6973/close-window.png" alt="close-window"/></a>
+                </div>
+                <div class="card">
+                    <h1>Insira uma data</h1>
+                    <input type= "date" id="data">
+                    <input type="time" id="hora">
+                    <h1>Local</h1>
+                    <input type="text" id="Local">
+                </div>
+
+                <p id="errosave" style="color: red; display: none;">Preencha todos os campos</p>
+            
+                
+                <button class="savedate" id="savedate">Salvar</button>
+            </div>
+
             <div class="content">
                 <div class="cards">
                     <h1>MINHAS PASSAGENS</h1>
@@ -152,20 +172,7 @@
                 </div>
             </div>
 
-            <div class="money">
-                    <h2>controle seus gastos</h2>
-
-                    <div class="valuecomplete">
-                        <h3>valor para viagem</h3>
-                        <h1>R$ 1500</h1>
-                        <button id="editmoney">editar</button>
-                    </div>
-
-                    <div class="value">
-                        <h3>você ainda tem</h3>
-                        <h3>R$ 605</h3>
-                    </div>
-            </div>
+            
 
         </div>
     </section>
