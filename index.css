@@ -438,27 +438,38 @@ a{
     transform: scale(0.9);
 }
 
-.mytravelopen .next{
-    height: 160px;
+.next.active{
+    display: block;
+}
+
+.next{
+    display: none;
+}
+
+.next .content{
+    width: 400px;
+    height: 250px;
     align-items: center;
     text-align: center;
     justify-content: space-around;
     margin-inline: 30px;
     border-radius: 20px;
     color: white;
-    display: none;
+    display: flex;
     padding: 10px;
     gap: 10px;
     background-image: linear-gradient(to right, #118c8c, #7c84c9); ;
 }
 
-.mytravelopen .next.active{
-    display: block;
-}
-
 .mytravelopen .date{
     display: flex;
     align-items: center;
+
+    p{
+        margin-bottom: -20px;
+        font-weight: 500;
+        font-size: 20px;
+    }
 
     a{
         cursor: pointer;
@@ -466,7 +477,7 @@ a{
 }
 
 .nextvoid{
-    height: 160px;
+    height: 250px;
     align-items: center;
     text-align: center;
     justify-content: space-around;

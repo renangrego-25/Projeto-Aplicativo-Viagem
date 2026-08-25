@@ -109,7 +109,7 @@ document.getElementById('savedate').addEventListener('click', function() {
     const hourTravel = document.getElementById('hora').value;
     const locationTravel = document.getElementById('Local').value;
     const erroSave = document.getElementById('errosave');
-    const next = document.getElementById('next');
+    const nextTravel = document.getElementById('nexttravel');
     
     localStorage.setItem('dataViagem', dateTravel);
     localStorage.setItem('horaViagem', hourTravel);
@@ -120,7 +120,22 @@ document.getElementById('savedate').addEventListener('click', function() {
     } else {
         cardTravel.classList.remove('active');
         erroSave.style.display = 'none';
-        addTravel.classList.add('');
+        addTravel.classList.add('hidden');
+        nextTravel.classList.add('active');
     }
     console.log('Dados salvos!' , { dateTravel, hourTravel, locationTravel });
+
+    
+    if(dateTravel && hourTravel && locationTravel){
+        document.getElementById('daten').textContent = `Dia ${dateTravel}`;
+        document.getElementById('hourn').textContent = `às ${hourTravel}`;
+        document.getElementById('locationn').textContent = `Para ${locationTravel}`;
+    }
+
 });
+
+document.getElementById('pinceledit').addEventListener('click', (e) =>{
+        e.preventDefault;
+        
+        cardTravel.classList.add('active');
+    })
