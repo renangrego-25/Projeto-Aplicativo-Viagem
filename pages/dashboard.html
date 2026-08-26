@@ -31,7 +31,7 @@
 
                 <div class="classcard">
                     <div class="carousel" id="carousel">
-                        <a class="card">
+                        <a class="card" >
                             <h1>MINHAS PASSAGENS</h1>
                             <img width="48" height="48" src="https://img.icons8.com/color/48/passport.png" alt="passport"/>
                         </a>
@@ -160,26 +160,76 @@
             </div>
 
             <div class="content">
-                <div class="cards">
+                <div class="cards" id="mypass">
                     <h1>MINHAS PASSAGENS</h1>
                     <img width="48" height="48" src="https://img.icons8.com/color/48/passport.png" alt="passport"/>
                 </div>
-                <div class="cards">
+                <div class="cards" id="myhosp">
                     <h1>MINHAS RESERVAS</h1>
                      <img width="48" height="48" src="https://img.icons8.com/pulsar-gradient/48/hotel-star.png" alt="hotel-star"/>
                 </div>
-                <div class="cards">
+                <div class="cards" id="mytour">
                     <h1>MEUS PASSEIOS</h1>
                     <img width="48" height="48" src="https://img.icons8.com/3d-fluency/94/adventure.png" alt="adventure"/>
                 </div>
             </div>
+        </div>
 
-            <div class="mytickets">
+        <div class="mytickets" id="pass">
+            <div class="exit">
+                <a id="closecardP"><img width="50" height="50" src="https://img.icons8.com/ios-filled/f2bb16/close-window.png" alt="close-window"/></a>
+            </div>
+            <div>
+                <h1>Passagens</h1>
+                <p>Insira no espaço abaixo suas passagens</p>
+                <input class="selectorfile" type="file">
+                <p>DATA</p>
+                <input class="saveDocs" type="date">
+                <p>LOCAL DE EMBARQUE</p>
+                <input class="saveDocs" type="text" placeholder="EX: Aeroporto de Guarulhos">
+                <button>Salvar</button>
+            </div>
+            <div class="showdoc1">
                 
             </div>
+        </div>
 
-            
+        <div class="mytickets" id="hosp">
+            <div class="exit">
+                <a id="closecardH"><img width="50" height="50" src="https://img.icons8.com/ios-filled/f2bb16/close-window.png" alt="close-window"/></a>
+            </div>
+            <div>
+                <h1>Hospedagem</h1>
+                <p>Insira no espaço abaixo sua hospedagem.</p>
+                <input class="selectorfile" type="file">
+                <p>DATA</p>
+                <input class="saveDocs" type="date">
+                <p>LOCAL DE HOSPEDAGEM</p>
+                <input class="saveDocs" type="text" placeholder="EX: Hotel la plata">
+                <button>Salvar</button>
+            </div>
+            <div class="showdoc2">
 
+            </div>
+        </div>
+
+        <div class="mytickets" id="tour">
+            <div class="exit">
+                <a id="closecardT"><img width="50" height="50" src="https://img.icons8.com/ios-filled/f2bb16/close-window.png" alt="close-window"/></a>
+            </div>
+            <div>
+                <h1>Passeios</h1>
+                <p>Insira no espaço abaixo seus passeios e tickets.</p>
+                <input class="selectorfile" type="file">
+                <p>DATA</p>
+                <input class="saveDocs" type="date">
+                <p>LOCAL</p>
+                <input class="saveDocs" type="text" placeholder="EX: Rio Amazonas">
+                <button>Salvar</button>
+            </div>
+            <div class="showdoc3">
+
+            </div>
         </div>
     </section>
 

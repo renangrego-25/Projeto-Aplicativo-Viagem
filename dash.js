@@ -139,3 +139,44 @@ document.getElementById('pinceledit').addEventListener('click', (e) =>{
         
         cardTravel.classList.add('active');
     })
+
+// Página passagens
+
+document.getElementById('mypass').addEventListener('click', () =>{
+
+    const pass = document.getElementById('pass');
+    const closeCardP = document.getElementById('closecardP');
+
+    pass.classList.add('active');
+
+    closeCardP.addEventListener('click', () =>{
+
+        pass.classList.remove('active');
+    })
+})
+
+document.getElementById('myhosp').addEventListener('click', () =>{
+
+    const hosp = document.getElementById('hosp');
+    const closeCardH = document.getElementById('closecardH');
+
+    hosp.classList.add('active');
+
+    closeCardH.addEventListener('click', () =>{
+
+        hosp.classList.remove('active');
+    })
+})
+
+document.getElementById('mytour').addEventListener('click', () =>{
+
+    const tour = document.getElementById('tour');
+    const closeCardT = document.getElementById('closecardT');
+
+    tour.classList.add('active');
+
+    closeCardT.addEventListener('click', () =>{
+
+        tour.classList.remove('active');
+    })
+})
