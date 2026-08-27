@@ -31,15 +31,15 @@
 
                 <div class="classcard">
                     <div class="carousel" id="carousel">
-                        <a class="card" >
+                        <a class="card" id="mypassinicial">
                             <h1>MINHAS PASSAGENS</h1>
                             <img width="48" height="48" src="https://img.icons8.com/color/48/passport.png" alt="passport"/>
                         </a>
-                        <a class="card">
+                        <a class="card" id="myhospinicial">
                             <h1>MINHAS RESERVAS</h1>
                             <img width="48" height="48" src="https://img.icons8.com/pulsar-gradient/48/hotel-star.png" alt="hotel-star"/>
                         </a>
-                        <a class="card">
+                        <a class="card" id="mytourinicial">
                             <h1>MEUS PASSEIOS</h1>
                             <img width="48" height="48" src="https://img.icons8.com/3d-fluency/94/adventure.png" alt="adventure"/>
                         </a>
@@ -179,18 +179,29 @@
             <div class="exit">
                 <a id="closecardP"><img width="50" height="50" src="https://img.icons8.com/ios-filled/f2bb16/close-window.png" alt="close-window"/></a>
             </div>
-            <div>
+            <div id="itenspass">
                 <h1>Passagens</h1>
                 <p>Insira no espaço abaixo suas passagens</p>
-                <input class="selectorfile" type="file">
+                <input id="docpass" class="selectorfile" type="file">
                 <p>DATA</p>
-                <input class="saveDocs" type="date">
+                <input id="datepass" class="saveDocs" type="date">
                 <p>LOCAL DE EMBARQUE</p>
-                <input class="saveDocs" type="text" placeholder="EX: Aeroporto de Guarulhos">
-                <button>Salvar</button>
+                <input id="localpass" class="saveDocs" type="text" placeholder="EX: Aeroporto de Guarulhos">
+                <p id="erropass" style="color: red; display: none;">Insira as informações da passagem!</p>
+                <button id="btnsavepass">Salvar</button>
             </div>
-            <div class="showdoc1">
-                
+            <div id="showdocone">
+                <h1>Passagens</h1>
+                <div class="doc" id="showdocpass">
+
+                </div>
+                <p id="horapass"></p>
+                <p id="locationpass"></p>
+
+                <div class="btns">
+                    <button id="editpass">EDITAR</button>
+                    <button id="delete">APAGAR</button>
+                </div>
             </div>
         </div>
 
@@ -198,18 +209,29 @@
             <div class="exit">
                 <a id="closecardH"><img width="50" height="50" src="https://img.icons8.com/ios-filled/f2bb16/close-window.png" alt="close-window"/></a>
             </div>
-            <div>
+            <div id="itenshosp">
                 <h1>Hospedagem</h1>
                 <p>Insira no espaço abaixo sua hospedagem.</p>
-                <input class="selectorfile" type="file">
+                <input id="dochosp" class="selectorfile" type="file">
                 <p>DATA</p>
-                <input class="saveDocs" type="date">
+                <input id="datehosp" class="saveDocs" type="date">
                 <p>LOCAL DE HOSPEDAGEM</p>
-                <input class="saveDocs" type="text" placeholder="EX: Hotel la plata">
-                <button>Salvar</button>
+                <input id="localhosp" class="saveDocs" type="text" placeholder="EX: Hotel la plata">
+                <p id="errohosp" style="color: red; display: none;">Insira as informações de hospedagem!</p>
+                <button id="btnsavehosp">Salvar</button>
             </div>
-            <div class="showdoc2">
+            <div id="showdoctwo">
+                <h1>Hospedagem</h1>
+                <div class="doc" id="showdochosp">
 
+                </div>
+                <p id="horahosp"></p>
+                <p id="locationhosp"></p>
+
+                <div class="btns">
+                    <button id="edithosp">EDITAR</button>
+                    <button id="deletehosp">APAGAR</button>
+                </div>
             </div>
         </div>
 
@@ -217,18 +239,29 @@
             <div class="exit">
                 <a id="closecardT"><img width="50" height="50" src="https://img.icons8.com/ios-filled/f2bb16/close-window.png" alt="close-window"/></a>
             </div>
-            <div>
+            <div id="itenstour">
                 <h1>Passeios</h1>
                 <p>Insira no espaço abaixo seus passeios e tickets.</p>
-                <input class="selectorfile" type="file">
+                <input id="doctour" class="selectorfile" type="file">
                 <p>DATA</p>
-                <input class="saveDocs" type="date">
+                <input id="datetour" class="saveDocs" type="date">
                 <p>LOCAL</p>
-                <input class="saveDocs" type="text" placeholder="EX: Rio Amazonas">
-                <button>Salvar</button>
+                <input id="localtour" class="saveDocs" type="text" placeholder="EX: Rio Amazonas">
+                <p id="errotour" style="color: red; display: none;">Insira as informações de seu passeio!</p>
+                <button id="btnsavetour">Salvar</button>
             </div>
-            <div class="showdoc3">
+            <div id="showdocthree">
+                <h1>Passeios</h1>
+                <div class="doc" id="showdoctour">
 
+                </div>
+                <p id="horatour"></p>
+                <p id="locationtour"></p>
+
+                <div class="btns">
+                    <button id="edittour">EDITAR</button>
+                    <button id="deletetour">APAGAR</button>
+                </div>
             </div>
         </div>
     </section>

@@ -141,6 +141,19 @@ document.getElementById('pinceledit').addEventListener('click', (e) =>{
     })
 
 // Página passagens
+document.getElementById('mypassinicial').addEventListener('click', (e)=>{
+    e.preventDefault
+
+    const pass = document.getElementById('pass');
+    const closeCardP = document.getElementById('closecardP');
+
+    pass.classList.add('active');
+
+    closeCardP.addEventListener('click', () =>{
+
+        pass.classList.remove('active');
+    })
+})
 
 document.getElementById('mypass').addEventListener('click', () =>{
 
@@ -155,6 +168,70 @@ document.getElementById('mypass').addEventListener('click', () =>{
     })
 })
 
+document.getElementById('btnsavepass').addEventListener('click', ()=>{
+
+    const docpass = document.getElementById('docpass').value;
+    const datepass = document.getElementById('datepass').value;
+    const localpass = document.getElementById('localpass').value;
+    const erropass = document.getElementById('erropass');
+    const itenspass = document.getElementById('itenspass');
+    const showdocone = document.getElementById('showdocone');
+
+
+    localStorage.setItem('docpass', docpass);
+    localStorage.setItem('datepass', datepass);
+    localStorage.setItem('localpass', localpass);
+
+    if(docpass === '' || datepass === '' || localpass === ''){
+        erropass.style.display = 'block';
+    }else{
+        itenspass.classList.add('hidden');
+        showdocone.classList.add('active');
+        erropass.style.display = 'none';
+    }
+
+    if(docpass && datepass && localpass){
+        document.getElementById('showdocpass').textContent = `${docpass}`;
+        document.getElementById('horapass').textContent = `ÀS ${datepass}`;
+        document.getElementById('locationpass').textContent = `EM ${localpass}`
+    };
+
+    document.getElementById('editpass').addEventListener('click', () =>{
+
+        itenspass.classList.remove('hidden');
+        showdocone.classList.remove('active');
+    })
+
+    document.getElementById('deletepass').addEventListener('click', () =>{
+
+        itenspass.classList.remove('hidden');
+        showdocone.classList.remove('active');
+
+        docpass.value = ''; 
+        datepass.value = '';
+        localpass.value = '';
+
+    })
+});
+
+
+
+
+// Página Hospedagem 
+document.getElementById('myhospinicial').addEventListener('click', (e)=>{
+    e.preventDefault
+
+    const hosp = document.getElementById('hosp');
+    const closeCardH = document.getElementById('closecardH');
+
+    hosp.classList.add('active');
+
+    closeCardH.addEventListener('click', () =>{
+
+        hosp.classList.remove('active');
+    });
+});
+
 document.getElementById('myhosp').addEventListener('click', () =>{
 
     const hosp = document.getElementById('hosp');
@@ -168,6 +245,68 @@ document.getElementById('myhosp').addEventListener('click', () =>{
     })
 })
 
+document.getElementById('btnsavehosp').addEventListener('click', ()=>{
+
+    const dochosp = document.getElementById('dochosp').value;
+    const datehosp = document.getElementById('datehosp').value;
+    const localhosp = document.getElementById('localhosp').value;
+    const errohosp = document.getElementById('errohosp');
+    const itenshosp = document.getElementById('itenshosp');
+    const showdoctwo = document.getElementById('showdoctwo');
+
+
+    localStorage.setItem('dochosp', dochosp);
+    localStorage.setItem('datehosp', datehosp);
+    localStorage.setItem('localhosp', localhosp);
+
+    if(dochosp === '' || datehosp === '' || localhosp === ''){
+        errohosp.style.display = 'block';
+    }else{
+        itenshosp.classList.add('hidden');
+        showdoctwo.classList.add('active');
+        errohosp.style.display = 'none';
+    }
+
+    if(dochosp && datehosp && localhosp){
+        document.getElementById('showdochosp').textContent = `${dochosp}`;
+        document.getElementById('horahosp').textContent = `ÀS ${datehosp}`;
+        document.getElementById('locationhosp').textContent = `EM ${localhosp}`
+    };
+
+    document.getElementById('edithosp').addEventListener('click', () =>{
+
+        itenshosp.classList.remove('hidden');
+        showdoctwo.classList.remove('active');
+    })
+
+    document.getElementById('deletehosp').addEventListener('click', () =>{
+
+        itenshosp.classList.remove('hidden');
+        showdoctwo.classList.remove('active');
+
+        dochosp.value = ''; 
+        datehosp.value = '';
+        localhosp.value = '';
+
+    })
+});
+
+// Página passeios
+
+document.getElementById('mytourinicial').addEventListener('click', (e)=>{
+    e.preventDefault
+
+    const tour = document.getElementById('tour');
+    const closeCardT = document.getElementById('closecardT');
+
+    tour.classList.add('active');
+
+    closeCardT.addEventListener('click', () =>{
+
+        tour.classList.remove('active');
+    });
+});
+
 document.getElementById('mytour').addEventListener('click', () =>{
 
     const tour = document.getElementById('tour');
@@ -180,3 +319,49 @@ document.getElementById('mytour').addEventListener('click', () =>{
         tour.classList.remove('active');
     })
 })
+
+document.getElementById('btnsavetour').addEventListener('click', ()=>{
+
+    const doctour = document.getElementById('doctour').value;
+    const datetour = document.getElementById('datetour').value;
+    const localtour = document.getElementById('localtour').value;
+    const errotour = document.getElementById('errotour');
+    const itenstour = document.getElementById('itenstour');
+    const showdocthree = document.getElementById('showdocthree');
+    
+
+    localStorage.setItem('doctour', doctour);
+    localStorage.setItem('datetour', datetour);
+    localStorage.setItem('localtour', localtour);
+
+    if(doctour === '' || datetour === '' || localtour === ''){
+        errotour.style.display = 'block';
+    }else{
+        itenstour.classList.add('hidden');
+        showdocthree.classList.add('active');
+        errotour.style.display = 'none';
+    }
+
+    if(doctour && datetour && localtour){
+        document.getElementById('showdoctour').textContent = `${doctour}`;
+        document.getElementById('horatour').textContent = `ÀS ${datetour}`;
+        document.getElementById('locationtour').textContent = `EM ${localtour}`
+    };
+
+    document.getElementById('edittour').addEventListener('click', () =>{
+
+        itenstour.classList.remove('hidden');
+        showdocthree.classList.remove('active');
+    })
+
+    document.getElementById('deletetour').addEventListener('click', () =>{
+
+        itenstour.classList.remove('hidden');
+        showdocthree.classList.remove('active');
+
+        doctour.value = ''; 
+        datetour.value = '';
+        localtour.value = '';
+
+    })
+});

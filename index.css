@@ -628,6 +628,7 @@ a{
     font-family: "sour gummy";
     font-size: 18px;
     border-radius: 10px;
+    margin-bottom: -20px;
     transition: 0.1s ease-in-out;
     background-image: linear-gradient(to left, #f2bb16,#bf820f);
 }
@@ -640,6 +641,77 @@ a{
     border-radius: 15px;
     padding: 15px 50px;
 }
+
+#itenspass.hidden{
+    display: none;
+}
+
+#showdocone{
+    display: none;
+    height: 350px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(to left,rgba(255, 255, 255, 0.589), rgba(128, 128, 128, 0.377));
+}
+
+#showdocone.active{
+    display: block;
+}
+
+#showdocone p{
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: -50px;
+    font-weight: 500;
+}
+
+#itenshosp.hidden{
+    display: none;
+}
+
+#showdoctwo{
+    display: none;
+    height: 350px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(to left,rgba(255, 255, 255, 0.589), rgba(128, 128, 128, 0.377));
+}
+
+#showdoctwo.active{
+    display: block;
+}
+
+#showdoctwo p{
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: -50px;
+    font-weight: 500;
+}
+
+
+#itenstour.hidden{
+    display: none;
+}
+
+#showdocthree{
+    display: none;
+    height: 350px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(to left,rgba(255, 255, 255, 0.589), rgba(128, 128, 128, 0.377));
+}
+
+#showdocthree.active{
+    display: block;
+}
+
+#showdocthree p{
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: -50px;
+    font-weight: 500;
+}
+
 
 
 
