@@ -51,15 +51,15 @@
                     <button id="next"><img width="30" height="30" src="https://img.icons8.com/ios-filled/f2bb16/circled-chevron-right.png" alt="circled-chevron-right"/></button>
                 </div>
 
-                <div class="IA">
-                    <a href="">
+                <div class="IA" id="IA">
+                    
                         <div>
                             <h1>Auxiliar do viajante</h1>
                             <p>Pergunte a nossa IA locais para visitar, restaurantes e muitos mais.</p>
                         </div>
     
                         <img width="48" height="48" src="https://img.icons8.com/fluency/48/ai-generated-text.png" alt="ai-generated-text"/>
-                    </a>
+                    
                 </div>
             </div>
 
@@ -81,18 +81,6 @@
                         <img width="48" height="48" src="https://img.icons8.com/color/48/calendar--v1.png" alt="calendar--v1"/>
                     </div>
 
-                </div>
-                <div class="line">
-
-                    <div class="card">
-                        <h1>Saúde e segurança</h1>
-                        <img width="48" height="48" src="https://img.icons8.com/color/48/heart-health.png" alt="heart-health"/>
-                    </div>
-
-                    <div class="card">
-                        <h1>Minhas memórias</h1>
-                        <img width="48" height="48" src="https://img.icons8.com/color/48/stack-of-photos--v1.png" alt="stack-of-photos--v1"/>
-                    </div>
                 </div>
 
             </div>
@@ -262,6 +250,17 @@
                     <button id="edittour">EDITAR</button>
                     <button id="deletetour">APAGAR</button>
                 </div>
+            </div>
+        </div>
+
+        <div class="IAopen" id="IAopen">
+            <div class="IAvoltar" id="IAvoltar"><img width="30" height="30" src="https://img.icons8.com/ios-filled/f2bb16/back.png" alt="back"/></div>
+            <div class="content">
+                <textarea class="result" id="result" rows="10" disabled
+                placeholder="" style="height: 70%; font-family: sour gummy; font-size: 20px;">Olá, como posso ajudar?</textarea>
+
+                <textarea class="question" id="inputQuestion"
+                placeholder="Pergunte ao Travs" style="height: 20%; font-family: sour gummy; font-size: 20px; "></textarea>
             </div>
         </div>
     </section>
