@@ -373,6 +373,7 @@ const result = document.getElementById('result');
 
 inputQuestion.addEventListener('keypress', (e) => {
 
+    
     if (inputQuestion.value && e.key === "Enter") {
         SendQuestion();
     }
@@ -466,5 +467,113 @@ document.getElementById('IA').addEventListener('click', (e)=>{
     const IAvoltar = document.getElementById('IAvoltar').addEventListener('click', ()=> {
 
         IAopen.classList.remove('active');
+    })
+})
+
+// Página checklist
+
+document.addEventListener("DOMContentLoaded", ()=>{
+
+    const inputTarefa = document.getElementById('tarefa');
+    const btnAdd = document.getElementById('addtarefa');
+    const listaTarefas = document.getElementById('listatarefas');
+
+
+    carregarTarefas();
+
+    btnAdd.addEventListener('click', () => {
+        adicionarTarefa();
+    });
+
+    function adicionarTarefa(){
+
+        const texto = inputTarefa.value.trim();
+
+        if(texto === "") {
+            alert("Digite algo antes de adicionar");
+            return;
+        }
+
+        criarCardTarefa(texto);
+        inputTarefa.value = "";
+        inputTarefa.focus();
+
+
+        salvarTarefas();
+    }
+
+    function criarCardTarefa(texto, concluida = false) {
+
+        const card = document.createElement("div");
+        card.className = "tarefa";
+
+        const nome = document.createElement("h2");
+        nome.className = "nometarefa";
+        nome.textContent = texto;
+
+        if (concluida) {
+            nome.style.textDecoration = "line-through";
+            nome.style.opacity = "0.6";
+        }
+
+        const btnConcluida = document.createElement("button");
+        btnConcluida.className = "concluida";
+        btnConcluida.innerHTML = concluida ? '<img width="48" height="48" src="https://img.icons8.com/ios-filled/50/process.png" alt="process"/>' : '<img width="48" height="48" src="https://img.icons8.com/emoji/48/check-mark-button-emoji.png" alt="check-mark-button-emoji"/>';
+
+        const btnExcluir = document.createElement("button");
+        btnExcluir.className = "excluir";
+        btnExcluir.innerHTML = '<img width="48" height="48" src="https://img.icons8.com/color/48/close-window.png" alt="close-window"/>';
+
+        btnConcluida.addEventListener('click', () => {
+            const feita = nome.style.textDecoration === "line-through";
+            card.style.backgroundImage = feita ? "linear-gradient(to right, #0e287e, #7c84c9)" : "linear-gradient(to right, #0e7e21, #7cc99f)"
+            nome.style.textDecoration = feita ? "none" : "line-through";
+            nome.style.opacity = feita ? "1" : "0.6";
+            btnConcluida.innerHTML = feita ? '<img width="48" height="48" src="https://img.icons8.com/emoji/48/check-mark-button-emoji.png" alt="check-mark-button-emoji"/>' : '<img width="50" height="50" src="https://img.icons8.com/ios-filled/50/process.png" alt="process"/>' ;
+            salvarTarefas();
+        })
+
+        btnExcluir.addEventListener('click', () => {
+            card.remove();
+            salvarTarefas();
+        });
+
+        card.appendChild(nome);
+        card.appendChild(btnConcluida);
+        card.appendChild(btnExcluir);
+
+        listaTarefas.appendChild(card);
+    }
+
+
+    function salvarTarefas() {
+        const tarefas = [];
+        document.querySelectorAll("#listatarefas .tarefa").forEach((card) => {
+            const nome = card.querySelectorAll(".nometarefa");
+
+            tarefas.push({
+                texto: nome.textContent,
+                concluida: nome.style.textDecoration === "line-through",
+            });
+        });
+
+        localStorage.setItem("tarefas", JSON.stringify(tarefas));
+    }
+
+    function carregarTarefas() {
+        const salvas = JSON.parse(localStorage.getItem("tarefas") || "[]");
+        salvas.forEach((t) => criarCardTarefa(t.texto, t.concluida));
+    }
+});
+
+document.getElementById('checklist').addEventListener('click', () => {
+
+    const openCheck = document.getElementById('checklistopen');
+
+    openCheck.classList.add('active');
+
+    document.getElementById('Checkvoltar').addEventListener('click', () => {
+
+        openCheck.classList.remove('active');
     })
 })
