@@ -577,3 +577,42 @@ document.getElementById('checklist').addEventListener('click', () => {
         openCheck.classList.remove('active');
     })
 })
+
+
+// Navfixed 
+
+const myDocs = document.getElementById('mydocuments');
+const dashboard = document.getElementById('dashboard');
+const configuration = document.getElementById('configuration');
+const pagDocs = document.getElementById('savedocs');
+const pagConfig = document.getElementById('config');
+
+myDocs.addEventListener('click', (e) => {
+    e.preventDefault;
+
+    myDocs.classList.add('active');
+    dashboard.classList.remove('active');
+    configuration.classList.remove('active');
+    pagDocs.classList.add('active');
+    pagConfig.classList.remove('active');
+})
+
+configuration.addEventListener('click', (e) => {
+    e.preventDefault;
+
+    configuration.classList.add('active');
+    pagConfig.classList.add('active');
+    dashboard.classList.remove('active');
+    myDocs.classList.remove('active');
+    pagDocs.classList.remove('active');
+})
+
+dashboard.addEventListener('click', (e) => {
+    e.preventDefault;
+
+    dashboard.classList.add('active');
+    configuration.classList.remove('active');
+    myDocs.classList.remove('active');
+    pagDocs.classList.remove('active');
+    pagConfig.classList.remove('active');
+})
