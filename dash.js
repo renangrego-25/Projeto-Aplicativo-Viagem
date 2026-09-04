@@ -370,36 +370,84 @@ document.getElementById('btnsavetour').addEventListener('click', ()=>{
 
 const inputQuestion = document.getElementById('inputQuestion');
 const result = document.getElementById('result');
+const suggestion = document.getElementById('suggestion');
+const btnSendIA = document.getElementById('sendtoAI');
+
+btnSendIA.addEventListener('click', () => {
+
+    if (inputQuestion.value) {
+        SendQuestion();
+        suggestion.classList.add('hidden');
+    }
+})
 
 inputQuestion.addEventListener('keypress', (e) => {
 
     
     if (inputQuestion.value && e.key === "Enter") {
         SendQuestion();
+        suggestion.classList.add('hidden');
     }
 
 });
 
-const OPENAI_API_KEY = "";
+const questionOne = document.getElementById('questionone');
+const questionTwo = document.getElementById('questiontwo');
+const questionThree = document.getElementById('questionthree');
 
+questionOne.addEventListener('click', (e) => {
+    e.preventDefault;
+
+    inputQuestion.textContent = `${questionOne.textContent}`;
+    suggestion.classList.add('hidden');
+});
+
+questionTwo.addEventListener('click', (e) => {
+    e.preventDefault;
+
+    inputQuestion.textContent = `${questionTwo.textContent}`;
+    suggestion.classList.add('hidden');
+})
+
+questionThree.addEventListener('click', (e) => {
+    e.preventDefault;
+
+    inputQuestion.textContent = `${questionThree.textContent}`;
+    suggestion.classList.add('hidden');
+})
+
+const GEMINI_API_KEY = "";
 
 function SendQuestion() {
 
     var sQuestion = inputQuestion.value;
 
-    fetch("https://api.openai.com/v1/responses", {
+    fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=" + GEMINI_API_KEY, {
 
         method: "POST",
 
         headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-            "Authorization": "Bearer " + OPENAI_API_KEY
+            "Content-Type": "application/json"
         },
 
         body: JSON.stringify({
-            model: "gpt-5.6-luna",
-            input: sQuestion,
+            system_instruction: {
+                parts: [
+                    {text: "Você é Travs, um assistente de IA para viagens e dúvidas relacionadas a este assunto, seja simpático e objetivo. Apresente as informações de maneira direta e prática. Qualquer dúvida fora deste padrão retorne que você não é preparado para este assunto e solicite outra pergunta. Evite usar emojis e elementos que não sejam números e letras."}
+                ]
+            },
+            contents: [
+                {
+                    parts: [
+                        { text: sQuestion }
+                    ]
+                }
+            ],
+            generationConfig: {
+                thinkingConfig: {
+                    thinkingBudget: 1
+            }
+        }
         })
 
     })
@@ -409,16 +457,16 @@ function SendQuestion() {
     .then((json) => {
 
         if (result.value) {
-            result.value += "\n";
+            result.value += "\n\n";
         }
 
         if (json.error?.message) {
 
             result.value += `Error: ${json.error.message}`;
 
-        } else if (json.output_text) {
+        } else if (json.candidates?.[0]?.content?.parts?.[0]?.text) {
 
-            result.value += "IA: " + json.output_text;
+            result.value += "Travs: " + json.candidates[0].content.parts[0].text;
 
         } else {
 
@@ -448,7 +496,7 @@ function SendQuestion() {
 
 
     if (result.value) {
-        result.value += "\n\n\n";
+        result.value += "\n\n";
     }
 
     result.value += `Eu: ${sQuestion}`;
@@ -457,6 +505,9 @@ function SendQuestion() {
     inputQuestion.disabled = true;
 
 }
+
+
+//
 
 document.getElementById('IA').addEventListener('click', (e)=>{
     e.preventDefault;
