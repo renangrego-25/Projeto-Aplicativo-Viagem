@@ -905,6 +905,110 @@ a{
     border: none;
 }
 
+.itineraryopen.active{
+    display: block;
+}
+
+.itineraryopen{
+    padding-top: 50px;
+    display: block;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    overflow-y: auto;
+    width: 480px;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.555)), url(images/paris.jfif);
+}
+
+.itineraryopen .itivoltar{
+    text-align: left;
+    padding-inline: 30px;
+    padding-bottom: 20px;
+}
+
+.itineraryopen h1{
+    color: #000b6d;
+}
+
+.itineraryopen p{
+    color: black;
+    margin-top: -20px;
+}
+
+.itineraryopen .inputtodo{
+    height: 300px;
+    padding: 20px;
+    margin-inline: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to right, #118c8c, #7c84c9);
+}
+
+.itineraryopen .inputtodo h3{
+    font-family: 'sour gummy';
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+}
+
+.itineraryopen .inputtodo .inputtext{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    text-align: center;
+    align-items: center;
+}
+
+.itineraryopen .inputtodo .inputtext input{
+    width: 70%;
+    height: 30px;
+    padding: 10px;
+    margin-block: 5px;
+    border-radius: 20px;
+    border: none;
+}
+
+.itineraryopen .inputtodo .inputtext{
+    display: flex;
+    flex-direction: column;
+}
+
+.itineraryopen .inputtodo .inputtext button{
+    background-color: transparent;
+    border: none;
+    transition: 0.1s ease-in-out;
+}
+
+.itineraryopen .inputtodo .inputtext button:active{
+    transform: scale(0.9);
+}
+
+.tarefa{
+    color: white;
+    text-transform: uppercase;
+    font-family: 'sour gummy';
+    font-size: 12px;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px 30px;
+    height: 80px;
+    border-radius: 15px;
+    display: flex;
+    background-image: linear-gradient(to right, #0e287e, #7c84c9);
+}
+
+.tarefa h2{
+    width: 50%;
+    text-align: left;
+}
+
+.tarefa button{
+    background-color: transparent;
+    border: none;
+}
 
 .savedocs.active{
     display: block;
@@ -942,6 +1046,72 @@ a{
     transform: scale(0.9);
 }
 
+.savedocs .cardopen.active{
+    visibility: visible;
+    opacity: 1;
+}
+.savedocs .cardopen{
+    transition: 0.2s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    padding-top: 60px;
+    color: white;
+    position: fixed;
+    background-color: #3c4592b9;
+    width: 480px;
+    height: 100%;
+    overflow-y: auto;
+    top: 0;
+    backdrop-filter: blur(10px);
+}
+
+.savedocs .cardopen .exitcard{
+    text-align: right;
+    margin-right: 30px;
+}
+.savedocs .cardopen button{
+    background-color: white;
+    padding: 15px 30px;
+    border: none;
+    margin: 10px;
+    border-radius: 10px;
+    font-family: "sour gummy";
+    font-size: 18px;
+    transition: 0.1s ease-in-out;
+}
+
+.savedocs .cardopen button:active{
+    transform: scale(0.9);
+}
+
+.savedocs .cardopen input{
+    border: 1px solid #0e287e;
+    width: 420px;
+    height: 150px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.savedocs .cardopen .inputload{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.savedocs .cardopen .load {
+    display: none;
+}
+
+.savedocs .cardopen .load.active{
+    display: block;
+}
+
+
+/**/
 .config.active{
     display: block;
 }

@@ -667,3 +667,226 @@ dashboard.addEventListener('click', (e) => {
     pagDocs.classList.remove('active');
     pagConfig.classList.remove('active');
 })
+
+//página de documentos
+
+document.addEventListener('DOMContentLoaded', () => {
+  const map = {
+    docperson: 'carddoc',
+    docpersoncar: 'cardcar',
+    docpersonpass: 'cardpass',
+    docpersonvac: 'cardvac'
+  };
+  
+
+  Object.entries(map).forEach(([cardId, panelId]) => {
+    const card = document.getElementById(cardId);
+    const panel = document.getElementById(panelId);
+    const closeCard = document.querySelectorAll('.closedoc');
+
+    if (!card || !panel) return;
+
+    card.addEventListener('click', () => {
+      const isActive = panel.classList.contains('active');
+
+
+      Object.values(map).forEach(id => {
+        document.getElementById(id)?.classList.remove('active');
+      });
+
+      if (!isActive) {
+        panel.classList.add('active');
+      }
+    });
+  });
+  document.querySelectorAll('.closedoc').forEach(link => {
+  link.addEventListener('click', () => {
+    link.closest('.cardopen')?.classList.remove('active');
+  });
+});
+});
+
+// Salvar docs
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.cardopen').forEach(panel => {
+    const panelId = panel.id; // ex: 'cardvac'
+    const storageKey = `doc_${panelId}`;
+
+    const input = panel.querySelector('input[type="file"]');
+    const btnSalvar = panel.querySelector('.btn-salvar');
+    const btnApagar = panel.querySelector('.btn-apagar');
+    const loadDiv = panel.querySelector('.load');
+    const showDiv = panel.querySelector('.showdocload');
+
+    // Ao carregar a página, restaura o que já foi salvo
+    const saved = localStorage.getItem(storageKey);
+    if (saved) {
+      const { name } = JSON.parse(saved);
+      showDiv.innerHTML = `<p>${name}</p>`;
+      loadDiv.classList.add('active');
+    }
+
+    // Salvar novo arquivo
+    btnSalvar.addEventListener('click', () => {
+      const file = input.files[0];
+      if (!file) {
+        alert('Selecione um arquivo primeiro.');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const dataUrl = e.target.result; // base64
+        localStorage.setItem(storageKey, JSON.stringify({
+          name: file.name,
+          data: dataUrl
+        }));
+
+        showDiv.innerHTML = `<p>${file.name}</p>`;
+        loadDiv.classList.add('active');
+        input.value = '';
+      };
+      reader.readAsDataURL(file);
+    });
+
+    btnApagar.addEventListener('click', () => {
+      localStorage.removeItem(storageKey);
+      showDiv.innerHTML = '';
+      loadDiv.classList.remove('active');
+    });
+  });
+});
+
+//Página de itinerário
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const itinerary = document.getElementById('itinerary');
+    const btnAddIt = document.getElementById('additinerary');
+    const localItinInput = document.getElementById('Localitin');
+    const dateItiInput = document.getElementById('dateiti');
+    const listaitinerario = document.getElementById('listaitinerario');
+
+    carregarItinerario();
+
+    btnAddIt.addEventListener('click', () => {
+        adicionarItine();
+    });
+
+    function adicionarItine() {
+
+        const textoIt = itinerary.value.trim();
+        const textoLocal = localItinInput.value.trim();
+        const textoDate = dateItiInput.value.trim();
+
+        if (textoIt === "" || textoLocal === "" || textoDate === "") {
+            alert("Preencha todos os campos");
+            return;
+        }
+
+        criarCardItine(textoIt, textoLocal, textoDate);
+
+        // limpa os campos após adicionar
+        itinerary.value = "";
+        localItinInput.value = "";
+        dateItiInput.value = "";
+
+        salvarItinerario();
+    }
+
+    function criarCardItine(textoIt, textoLocal, textoDate, concluida = false) {
+
+        const cardIti = document.createElement("div");
+        cardIti.className = "itinerary-item";
+
+        const nomeiti = document.createElement("h3");
+        nomeiti.className = "nomeiti";
+        nomeiti.textContent = textoIt;
+
+        const localiti = document.createElement("h3");
+        localiti.className = "localiti";
+        localiti.textContent = textoLocal;
+
+        const dateiti = document.createElement("h3");
+        dateiti.className = "dateiti";
+        dateiti.textContent = textoDate;
+
+        if (concluida) {
+            nomeiti.style.textDecoration = "line-through";
+            nomeiti.style.opacity = "0.6";
+            cardIti.style.backgroundImage = "linear-gradient(to right, #0e7e21, #7cc99f)";
+        }
+
+        const btnItiConcluida = document.createElement("button");
+        btnItiConcluida.className = "iticoncluida";
+        btnItiConcluida.innerHTML = concluida
+            ? '<img width="48" height="48" src="https://img.icons8.com/ios-filled/50/process.png" alt="process"/>'
+            : '<img width="48" height="48" src="https://img.icons8.com/emoji/48/check-mark-button-emoji.png" alt="check-mark-button-emoji"/>';
+
+        const btnItiExcluir = document.createElement("button");
+        btnItiExcluir.className = "excluir";
+        btnItiExcluir.innerHTML = '<img width="48" height="48" src="https://img.icons8.com/color/48/close-window.png" alt="close-window"/>';
+
+        btnItiConcluida.addEventListener('click', () => {
+            const feita = nomeiti.style.textDecoration === "line-through";
+
+            cardIti.style.backgroundImage = feita
+                ? "linear-gradient(to right, #0e287e, #7c84c9)"
+                : "linear-gradient(to right, #0e7e21, #7cc99f)";
+
+            nomeiti.style.textDecoration = feita ? "none" : "line-through";
+            nomeiti.style.opacity = feita ? "1" : "0.6";
+
+            btnItiConcluida.innerHTML = feita
+                ? '<img width="48" height="48" src="https://img.icons8.com/emoji/48/check-mark-button-emoji.png" alt="check-mark-button-emoji"/>'
+                : '<img width="48" height="48" src="https://img.icons8.com/ios-filled/50/process.png" alt="process"/>';
+
+            salvarItinerario();
+        });
+
+        btnItiExcluir.addEventListener('click', () => {
+            cardIti.remove();
+            salvarItinerario();
+        });
+
+        cardIti.appendChild(nomeiti);
+        cardIti.appendChild(localiti);
+        cardIti.appendChild(dateiti);
+        cardIti.appendChild(btnItiConcluida);
+        cardIti.appendChild(btnItiExcluir);
+
+        listaitinerario.appendChild(cardIti);
+    }
+
+    function salvarItinerario() {
+        const itinerario = [];
+
+        document.querySelectorAll("#listaitinerario > div").forEach((card) => {
+            const nome = card.querySelector(".nomeiti");
+            const local = card.querySelector(".localiti");
+            const data = card.querySelector(".dateiti");
+
+            itinerario.push({
+                texto: nome.textContent,
+                local: local.textContent,
+                data: data.textContent,
+                concluida: nome.style.textDecoration === "line-through",
+            });
+        });
+
+        localStorage.setItem("itinerario", JSON.stringify(itinerario));
+    }
+
+    function carregarItinerario() {
+        const salvos = JSON.parse(localStorage.getItem("itinerario") || "[]");
+        salvos.forEach((t) => criarCardItine(t.texto, t.local, t.data, t.concluida));
+    }
+});
+
+// Fecha o painel do itinerário
+document.getElementById('itivoltar').addEventListener('click', () => {
+    document.getElementById('itineraryopen').classList.remove('active');
+});
+
+
