@@ -61,13 +61,15 @@ voltar.addEventListener('click', (e) => {
 
 const exit = document.getElementById('exit');
 const logout = document.getElementById('logout');
+const exitConfig = document.getElementById('exitconfig')
 
-exit.addEventListener('click', (e) => {
+function abrirLogout(e) {
     e.preventDefault();
+        logout.classList.add('active');
+}
 
-    logout.classList.add('active');
-    
-})
+exit.addEventListener('click', abrirLogout);
+exitConfig.addEventListener('click', abrirLogout);
 
 const cancel = document.getElementById('cancel');
 
@@ -884,9 +886,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Fecha o painel do itinerário
-document.getElementById('itivoltar').addEventListener('click', () => {
-    document.getElementById('itineraryopen').classList.remove('active');
-});
+document.getElementById('Itinerário').addEventListener('click', () => {
+    
+    const itiopen = document.getElementById('itineraryopen');
+    const itivoltar = document.getElementById('itivoltar');
+
+    itiopen.classList.add('active');
+
+    itivoltar.addEventListener('click', () => {
+        itiopen.classList.remove('active');
+    })
+})
 
 
+//página de config
+
+const connection = document.getElementById('connection');
+const central = document.getElementById('central');
+const erroPage = document.getElementById('erropage');
+const btnErroPage = document.getElementById('btnerropage').addEventListener('click', ()=>{
+    erroPage.classList.remove('active');
+})
+
+function erropage(){
+    erroPage.classList.add('active');
+}
+
+connection.addEventListener('click', erropage);
+central.addEventListener('click', erropage);
