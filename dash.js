@@ -418,40 +418,18 @@ questionThree.addEventListener('click', (e) => {
     suggestion.classList.add('hidden');
 })
 
-const GEMINI_API_KEY = "";
+
 
 function SendQuestion() {
 
     var sQuestion = inputQuestion.value;
 
-    fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=" + GEMINI_API_KEY, {
-
+    fetch("/api/proxy", {
         method: "POST",
-
         headers: {
             "Content-Type": "application/json"
         },
-
-        body: JSON.stringify({
-            system_instruction: {
-                parts: [
-                    {text: "Você é Travs, um assistente de IA para viagens e dúvidas relacionadas a este assunto, seja simpático e objetivo. Apresente as informações de maneira direta e prática. Qualquer dúvida fora deste padrão retorne que você não é preparado para este assunto e solicite outra pergunta. Evite usar emojis e elementos que não sejam números e letras."}
-                ]
-            },
-            contents: [
-                {
-                    parts: [
-                        { text: sQuestion }
-                    ]
-                }
-            ],
-            generationConfig: {
-                thinkingConfig: {
-                    thinkingBudget: 1
-            }
-        }
-        })
-
+        body: JSON.stringify({ question: sQuestion })
     })
 
     .then((response) => response.json())
@@ -904,6 +882,8 @@ document.getElementById('Itinerário').addEventListener('click', () => {
 const connection = document.getElementById('connection');
 const central = document.getElementById('central');
 const erroPage = document.getElementById('erropage');
+const data = document.getElementById('mydata');
+
 const btnErroPage = document.getElementById('btnerropage').addEventListener('click', ()=>{
     erroPage.classList.remove('active');
 })
@@ -914,3 +894,4 @@ function erropage(){
 
 connection.addEventListener('click', erropage);
 central.addEventListener('click', erropage);
+data.addEventListener('click', erropage);

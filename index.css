@@ -1025,15 +1025,7 @@ a{
     background-image: linear-gradient(to right, #0e287e, #7c84c9);
 }
 
-.tarefa h2{
-    width: 50%;
-    text-align: left;
-}
-
-.tarefa button{
-    background-color: transparent;
-    border: none;
-}
+/**/
 
 .savedocs.active{
     display: block;
