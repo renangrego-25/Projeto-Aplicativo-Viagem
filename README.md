@@ -48,27 +48,13 @@
 
 ## 🖥️ Demonstração
 
-
-
 ### Preview
-
-Para acessar o preview do projeto acesse o link:
 
 
 ## 🔗 Projeto online
 
-<!-- Link para o projeto publicado -->
+Para acessar o preview do projeto acesse o link: https://renangrego-25.github.io/Projeto-Aplicativo-Viagem/
 
----
-
-## 🔄 Próximas melhorias
-
-*
-*
-*
-*
-
----
 
 ## 🧠 Aprendizados
 
@@ -78,16 +64,8 @@ Para acessar o preview do projeto acesse o link:
 
 ## 👨‍💻 Autor
 
-**Nome:**
+**Nome: Renan Gregorio da Silva**
 
-**GitHub:**
+**GitHub: renangrego-25**
 
-**LinkedIn:**
-
----
-
-## 📄 Licença
-
-<!-- Informe a licença utilizada no projeto. -->
-
----
+**LinkedIn: https://www.linkedin.com/in/renan-gregorio-des2504/**
