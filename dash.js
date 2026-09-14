@@ -895,3 +895,63 @@ function erropage(){
 connection.addEventListener('click', erropage);
 central.addEventListener('click', erropage);
 data.addEventListener('click', erropage);
+
+
+//conversor de moeda
+
+const form = document.getElementById('convertorform');
+const amount = document.getElementById('amount');
+const fromCurrency = document.getElementById('fromcurrency');
+const convertedAmount = document.getElementById('convertedAmount');
+const toCurrency = document.getElementById('tocurrency');
+const loading = document.querySelector('.loading');
+const resultConv = document.querySelector('.result');
+const error = document.querySelector('.error');
+const converterBtn = document.getElementById('converterBtn');
+
+
+const API_URL = "https://api.exchangerate-api.com/v4/latest/";
+
+
+async function convertMoney(){
+
+    loading.style.display = "block";
+    error.style.display = "none";
+    resultConv.style.display = "none";
+
+    console.log(API_URL + fromCurrency.value);
+
+    try{
+        const response = await fetch(API_URL + fromCurrency.value);
+        const dataConv = await  response.json()
+
+        const rate = dataConv.rates[toCurrency.value];
+        const convertedRate = (amount.value * rate);
+
+        convertedAmount.value = convertedRate;
+
+        resultConv.style.display = "block";
+        loading.style.display = "none"
+
+        resultConv.innerHTML = `
+        <div style="font-size: 1.4rem">
+            ${amount.value} ${fromCurrency.value} = ${convertedAmount.value} ${toCurrency.value}</div>
+            <div style="font-size: 0.9rem; opacity: 0;">
+            Taxa: 1 ${fromCurrency.value} = ${rate} ${toCurrency.value}
+            </div>`;
+            
+        console.log("valor convertido");
+    }
+    catch(err){
+        console.error(error);
+        error.style.display = "block";
+        error.style.margin = "10px";
+        error.innerHTML = `Erro ao carregar cotação`;
+        loading.style.display = "none";
+    }
+}
+
+form.addEventListener('submit', (e)=>{
+    e.preventDefault()
+    convertMoney()
+})

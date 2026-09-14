@@ -1025,6 +1025,120 @@ a{
     background-image: linear-gradient(to right, #0e287e, #7c84c9);
 }
 
+.conversor{
+    position: fixed;
+    top: 0;
+    background-image: linear-gradient(15deg,rgb(207, 108, 207), rgb(127, 127, 214));
+    height: 100vh;
+    width: 480px;
+    text-transform: uppercase;
+    color: #0e287e;
+    padding-top: 100px; 
+
+    h1{
+        color: white;
+    }
+}
+
+.convertor-form{
+    background-color: white;
+    font-family: "sour gummy";
+    margin: 50px 30px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.convertor-form .currency-row{
+    display: flex;
+    margin: 10px;
+    gap: 20px;
+}
+
+.convertor-form .currency-row input{
+    border-radius: 10px;
+    height: 40px;
+    border: 1px solid rgb(207, 205, 205);
+    padding: 10px;
+}
+
+.convertor-form .currency-row .currency-input{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.convertor-form .currency-row .currency-select{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.convertor-form .currency-row .currency-select select{
+    width: 100px;
+    height: 60px;
+    border: 1px solid rgb(207, 205, 205);
+    border-radius: 10px;
+}
+
+.convertor-form .currency-row .currency-select select:focus{
+    border: 1px solid #000b6d;
+}
+
+.convertor-form .converterBtn{
+    padding: 15px 20px;
+    background-color: #f2bb16;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-family: "sour gummy";
+    font-size: 18px;
+    border: none;
+    transition: 0.1s ease-in-out;
+}
+
+.convertor-form .converterBtn:active{
+    transform: scale(0.9);
+}
+
+.loading {
+    margin: 20px;
+    display: none;
+}
+
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin: auto;
+    animation: spin 0.5s linear infinite;
+}
+
+.result{
+    background-color: #0e287e;
+    padding: 20px;
+    margin-top: 30px;
+    color: white;
+    font: 1.1rem;
+    font-weight: 600;    
+    border-radius: 10px;
+    display: none;
+}
+
+.error{
+    background-color: rgb(231, 101, 101);
+    padding: 15px;
+    color: white;
+    border-radius: 10px;
+    display: none;
+}
+
+@keyframes spin{
+    0% { transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
 /**/
 
 .savedocs.active{

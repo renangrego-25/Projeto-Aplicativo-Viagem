@@ -305,6 +305,75 @@
             
         </div>
 
+        <div class="conversor">
+            <h1>conversor de moedas</h1>
+
+            <form class="convertor-form" id="convertorform">
+
+                <div class="currency-row">
+                    <div class="currency-input">
+                        <label for="amount">Valor</label>
+                        <input type="number" id="amount" step="0.1" min="0" required>
+                    </div>
+
+                    <div class="currency-select">
+                        <label for="fromcurrency">de</label>
+                        <select id="fromcurrency">
+                            <option value="USD">USD - Dólar</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="BRL" selected>BRL - Real</option>
+                            <option value="GBP">GBP - Libra</option>
+                            <option value="JPY">JPY - Iene</option>
+                            <option value="CAD">CAD - Dólar Canadense</option>
+                            <option value="AUD">AUD - Dólar Australiano</option>
+                            <option value="CHF">CHF - Franco Suíço</option>
+                            <option value="CNY">CNY - Yuan</option>
+                            <option value="ARS">ARS - Peso Argentino</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="currency-row">
+                    <div class="currency-input">
+                        <label for="convertedAmount">Resultado</label>
+                        <input type="text" readonly id="convertedAmount" step="0.1" min="0" required>
+                    </div>
+
+                    <div class="currency-select">
+                        <label for="tocurrency">de</label>
+                        <select id="tocurrency">
+                            <option value="USD" selected>USD - Dólar</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="BRL">BRL - Real</option>
+                            <option value="GBP">GBP - Libra</option>
+                            <option value="JPY">JPY - Iene</option>
+                            <option value="CAD">CAD - Dólar Canadense</option>
+                            <option value="AUD">AUD - Dólar Australiano</option>
+                            <option value="CHF">CHF - Franco Suíço</option>
+                            <option value="CNY">CNY - Yuan</option>
+                            <option value="ARS">ARS - Peso Argentino</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="converterBtn" id="converterBtn">
+                    Converter Moeda
+                </button>
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Buscando cotação...</p>
+                </div>
+    
+                <div class="result"></div>
+                <div class="error"></div>
+    
+                <div class="info">
+                    <p>Taxas atualizadas em tempo real.</p>
+                </div>
+            </form>
+
+        </div>
+
     </section>
 
     <section class="savedocs" id="savedocs">
