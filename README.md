@@ -15,7 +15,7 @@
 
 ## ✨ Funcionalidades
 
-- Arquivar documentos e para controle em um só lugar, como passagens, hospedagem, documentos pessoais e etc.
+- Arquivar documentos para controle em um só lugar, como passagens, hospedagem, documentos pessoais e etc.
 - Lista para controlar viagem.
 - Criação de um itinerário com data e local.
 - Conversão de moedas para auxiliar no controle financeiro.
@@ -47,8 +47,12 @@
 
 
 ## 🖥️ Demonstração
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/d983d43f-758a-4a23-9e79-4252ee153616" />
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/98bb8e79-bf2b-4ed4-961a-831aabf19161" />
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/448943c9-5495-46d5-abdc-f5104e769ea2" />
+<img width="1376" height="768" alt="image" src="https://github.com/user-attachments/assets/45e3efb3-fc2f-4588-ae73-7f4fee5f62a7" />
+<img width="1376" height="768" alt="image" src="https://github.com/user-attachments/assets/61f58a2b-12cc-4025-8431-b1100efa62c9" />
 
-### Preview
 
 
 ## 🔗 Projeto online
@@ -58,14 +62,17 @@ Para acessar o preview do projeto acesse o link: https://renangrego-25.github.io
 
 ## 🧠 Aprendizados
 
-<!-- Escreva o que você aprendeu durante o desenvolvimento. -->
+- Através da repetição de estruturas e analise de cada linha escrita, consegui absorver mais conhecimento em Javascript que vai me possibilitar fazer mais projetos no futuro e de forma mais rápida.
+- Aprendi como uma IA se comporta, seu aprendizado e como podemos definir tarefas específicas para ela.
+- Inicio de aprendizado em back-end, para armazernar chaves de API e como posso integrar no front-end.
+- O que são APIs e como elas auxiliam no desenvolvimento e comunicação do ambiente em produção.
 
 ---
 
 ## 👨‍💻 Autor
 
 **Nome: Renan Gregorio da Silva**
-
+**LinkedIn: linkedin.com/in/renan-gregorio-des2504/**
 **GitHub: renangrego-25**
 
 **LinkedIn: https://www.linkedin.com/in/renan-gregorio-des2504/**
