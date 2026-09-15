@@ -397,6 +397,7 @@ const questionOne = document.getElementById('questionone');
 const questionTwo = document.getElementById('questiontwo');
 const questionThree = document.getElementById('questionthree');
 
+
 questionOne.addEventListener('click', (e) => {
     e.preventDefault;
 
@@ -905,10 +906,11 @@ const fromCurrency = document.getElementById('fromcurrency');
 const convertedAmount = document.getElementById('convertedAmount');
 const toCurrency = document.getElementById('tocurrency');
 const loading = document.querySelector('.loading');
-const resultConv = document.querySelector('.result');
+const resultConv = document.querySelector('.resultcon');
 const error = document.querySelector('.error');
 const converterBtn = document.getElementById('converterBtn');
 
+const title = document.getElementById('title');
 
 const API_URL = "https://api.exchangerate-api.com/v4/latest/";
 
@@ -925,7 +927,7 @@ async function convertMoney(){
         const response = await fetch(API_URL + fromCurrency.value);
         const dataConv = await  response.json()
 
-        const rate = dataConv.rates[toCurrency.value];
+        const rate = dataConv.rates[toCurrency.value].toFixed(2);
         const convertedRate = (amount.value * rate);
 
         convertedAmount.value = convertedRate;
@@ -954,4 +956,23 @@ async function convertMoney(){
 form.addEventListener('submit', (e)=>{
     e.preventDefault()
     convertMoney()
+})
+
+document.getElementById('conver').addEventListener('click', () => {
+
+    const conversor = document.getElementById('conversor');
+
+    conversor.classList.add('active');
+
+    const convvoltar = document.getElementById('convvoltar').addEventListener('click', ()=>{
+        conversor.classList.remove('active');
+    })
+})
+
+fetch("https://projeto-aplicativo-viagem.vercel.app/api/proxy", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ question: sQuestion })
 })

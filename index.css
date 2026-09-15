@@ -1026,6 +1026,7 @@ a{
 }
 
 .conversor{
+    display: none;
     position: fixed;
     top: 0;
     background-image: linear-gradient(15deg,rgb(207, 108, 207), rgb(127, 127, 214));
@@ -1033,11 +1034,22 @@ a{
     width: 480px;
     text-transform: uppercase;
     color: #0e287e;
-    padding-top: 100px; 
+    padding-top: 50px; 
 
     h1{
         color: white;
     }
+}
+
+
+.conversor.active{
+    display: block;
+}
+
+.conversor .convvoltar{
+    text-align: left;
+    padding-inline: 30px;
+    padding-bottom: 21px;
 }
 
 .convertor-form{
@@ -1115,7 +1127,7 @@ a{
     animation: spin 0.5s linear infinite;
 }
 
-.result{
+.resultcon{
     background-color: #0e287e;
     padding: 20px;
     margin-top: 30px;
