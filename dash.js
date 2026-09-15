@@ -910,8 +910,6 @@ const resultConv = document.querySelector('.resultcon');
 const error = document.querySelector('.error');
 const converterBtn = document.getElementById('converterBtn');
 
-const title = document.getElementById('title');
-
 const API_URL = "https://api.exchangerate-api.com/v4/latest/";
 
 
