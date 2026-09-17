@@ -1,7 +1,7 @@
 # Projeto Aplicativo de Controle de Viagem (Travs) - relatório de desenvolvimento.
 - Desenvolvido por: Renan Gregorio da Silva
-- Finalizado em:
-- Status: Em andamento
+- Finalizado em: 17/09/2026
+- Status: Concluído
 
 ## 📌 Sobre o projeto
 
@@ -25,7 +25,7 @@
 
 ## 🛠️ Tecnologias
 
-<img width="48" height="48" src="https://img.icons8.com/color/48/visual-studio--v2.png" alt="visual-studio--v2"/><img width="48" height="48" src="https://img.icons8.com/color/48/figma--v1.png" alt="figma--v1"/><img width="48" height="48" src="https://img.icons8.com/color/48/html-5--v1.png" alt="html-5--v1"/><img width="48" height="48" src="https://img.icons8.com/color/48/css3.png" alt="css3"/><img width="48" height="48" src="https://img.icons8.com/color/48/javascript--v1.png" alt="javascript--v1"/><img width="48" height="48" src="https://img.icons8.com/color/48/nodejs.png" alt="nodejs"/><img width="48" height="48" src="https://img.icons8.com/fluency/48/claude-ai.png" alt="claude-ai"/><img width="48" height="48" src="https://img.icons8.com/ios-glyphs/30/github.png" alt="github"/><img width="48" height="48" src="https://img.icons8.com/color/48/git.png" alt="git"/>
+<img width="48" height="48" src="https://img.icons8.com/color/48/visual-studio--v2.png" alt="visual-studio--v2"/><img width="48" height="48" src="https://img.icons8.com/color/48/figma--v1.png" alt="figma--v1"/><img width="48" height="48" src="https://img.icons8.com/color/48/html-5--v1.png" alt="html-5--v1"/><img width="48" height="48" src="https://img.icons8.com/color/48/css3.png" alt="css3"/><img width="48" height="48" src="https://img.icons8.com/color/48/javascript--v1.png" alt="javascript--v1"/><img width="48" height="48" src="https://img.icons8.com/color/48/nodejs.png" alt="nodejs"/><img width="48" height="48" src="https://img.icons8.com/fluency/48/claude-ai.png" alt="claude-ai"/><img width="48" height="48" src="https://img.icons8.com/ios-glyphs/30/github.png" alt="github"/><img width="48" height="48" src="https://img.icons8.com/color/48/git.png" alt="git"/><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/vercel.png" alt="vercel"/>
 
 
 ---
