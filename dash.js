@@ -425,7 +425,7 @@ function SendQuestion() {
 
     var sQuestion = inputQuestion.value;
 
-    fetch("/api/proxy", {
+    fetch("https://projeto-aplicativo-viagem.vercel.app/api/proxy", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -965,12 +965,4 @@ document.getElementById('conver').addEventListener('click', () => {
     const convvoltar = document.getElementById('convvoltar').addEventListener('click', ()=>{
         conversor.classList.remove('active');
     })
-})
-
-fetch("https://projeto-aplicativo-viagem.vercel.app/api/proxy", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ question: sQuestion })
 })
