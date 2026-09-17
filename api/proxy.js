@@ -1,5 +1,17 @@
 export default async function handler(req, res) {
 
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    if (req.method === "OPTIONS") {
+        return res.status(200).end();
+    }
+
+    if (req.method !== "POST") {
+        return res.status(405).json({ error: "Método não permitido" });
+    }
+
     if (req.method !== "POST") {
         return res.status(405).json({ error: "Método não permitido" });
     }
@@ -22,7 +34,7 @@ export default async function handler(req, res) {
                 body: JSON.stringify({
                     system_instruction: {
                         parts: [
-                            { text: "Você é Travs, um assistente de IA para viagens e dúvidas relacionadas a este assunto, seja simpático e objetivo. Apresente as informações de maneira direta e prática. Qualquer dúvida fora deste padrão retorne que você não é preparado para este assunto e solicite outra pergunta. Evite usar emojis e elementos que não sejam números e letras." }
+                            { text: "Você é Travs, um assistente de IA para viagens e dúvidas relacionadas a este assunto, seja simpático e objetivo. Apresente as informações de maneira direta e prática. Qualquer dúvida fora deste padrão retorne que você não é preparado para este assunto e solicite outra pergunta. Usar emojis, porém evite colocar elementos que sejam feios visualmento, como asteristcos. Siga rigorosamente padrões da Lingua Portuguesa, acentos e regras gramaticais. Respostas devem ser diretas, mas sem parecer rude, ofere ajuda ao final de cada resposta." }
                         ]
                     },
                     contents: [
